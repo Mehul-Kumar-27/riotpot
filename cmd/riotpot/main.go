@@ -3,6 +3,8 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/riotpot/cmd/riotpot/parse"
 )
 
 // `main` starts all the submodules containing the emulator services.
@@ -13,7 +15,7 @@ func main() {
 	fmt.Println("░▒▓███ RIoIPot ███▓▒░")
 
 	// Parse the flags
-	cmd := NewRiotpotCommand()
+	cmd := parse.NewRiotpotCommand()
 	if err := cmd.Execute(); err != nil {
 		panic(err)
 	}
