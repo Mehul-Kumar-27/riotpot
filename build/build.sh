@@ -16,4 +16,5 @@ riotpot::requirements::install
 riotpot::golang::install_requirements
 
 # [1-3-2024] TODO: building in docker fails to complete.
+riotpot::ui::install_node
 riotpot::ui::build
