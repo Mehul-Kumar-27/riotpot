@@ -4,12 +4,19 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-function riotpot::ui::build(){
-    npm install react-scripts --silent
-    npm install ui --silent
-    npm --prefix="ui" --omit="dev" run build 
+function riotpot::ui::build() {
+    cd ui
+    npm install
+    npm run build
 }
 
-function riotpot::ui::serve_dev(){
+function riotpot::ui::install_node() {
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+    nvm install 18.18.0
+    nvm use 18.18.0
+
+}
+
+function riotpot::ui::serve_dev() {
     serve -s ./ui/build
 }
