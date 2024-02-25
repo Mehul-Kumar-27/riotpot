@@ -53,7 +53,7 @@ func TestNewRootCommand(t *testing.T) {
 			t.Errorf("Expected 'plugins' flag, but not found")
 		} else {
 			defaultPlugins := pluginsFlag.DefValue
-			expectedDefaultPlugins := "plugins/*.go"
+			expectedDefaultPlugins := "plugins/*.so"
 			if defaultPlugins != expectedDefaultPlugins {
 				t.Errorf("Expected default value for 'plugins' to be %s, got %s", expectedDefaultPlugins, defaultPlugins)
 			}

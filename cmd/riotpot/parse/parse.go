@@ -125,7 +125,7 @@ func NewRootCommand() *cobra.Command {
 	rootFlags := cmds.Flags()
 	rootFlags.StringSlice("services", []string{}, "Comma-separated list of services to start")
 	rootFlags.String("output", "", "Path to output file. E.g., 'path/to/riotpot.log'")
-	rootFlags.String("plugins", "plugins/*.go", "Path to plugins folder")
+	rootFlags.String("plugins", "plugins/*.so", "Path to plugins folder")
 
 	return cmds
 }
